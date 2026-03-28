@@ -1,0 +1,41 @@
+bank_pop_size: 5
+attacker_pop_size: 10
+
+# Bootstrapping: shorter for fast test
+bootstrap_generations: 5
+bootstrap_target_success_rate: 0.30
+
+max_generations: 10
+elite_count: 1
+crossover_rate: 0.1
+tournament_size: 3
+legitimate_tx_count: 5
+random_perturbation_count: 3
+max_turns_per_episode: 3
+hof_max_size: 20
+hof_eval_sample_size: 10
+speciation_threshold: 0.5
+min_species_size: 2
+fitness_sharing_sigma: 0.3
+archetype_protection_generations: 10
+min_per_archetype: 1
+mc_bank_min_legit_rate: 0.5
+mc_relaxation_threshold: 0.2
+stagnation_window: 5
+random_immigrant_count_banks: 1
+random_immigrant_count_attackers: 2
+# Set llm_api_base and llm_api_key_env for your provider.
+# Defaults: no base URL (uses OpenAI), key from LLM_API_KEY env var.
+# llm_api_base: "https://inference-api.nousresearch.com/v1"
+# llm_api_key_env: "LLM_API_KEY"
+
+# Asymmetric models: attackers get stronger model, banks get weaker model
+llm_model_bank: "claude-haiku-4-5-20251001"
+llm_model_attacker: "claude-sonnet-4-20250514"
+llm_model_mutation: "claude-sonnet-4-20250514"
+llm_model_judge: "claude-haiku-4-5-20251001"
+max_tokens_per_call: 1024
+max_concurrent_llm_calls: 10
+output_dir: "./evolution_output"
+save_every_n_generations: 2
+save_full_genomes: true
